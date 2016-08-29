@@ -1,4 +1,7 @@
 (require 'which-func)
 (add-to-list 'which-func-modes 'org-mode)
+(add-to-list 'which-func-modes 'c-mode)
+(add-to-list 'which-func-modes 'cc-mode)
 (which-func-mode 1)
+(set-face-foreground 'which-func "yellow")
 (provide 'init-which-func)

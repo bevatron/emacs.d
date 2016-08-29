@@ -96,7 +96,7 @@
   ;; init-evil dependent on init-clipboard
   (require 'init-clipboard)
   ;; use evil mode (vi key binding)
-  (require 'init-evil)
+  ;;(require 'init-evil)
   (require 'init-sh)
   (require 'init-ctags)
   (require 'init-bbdb)
@@ -143,7 +143,7 @@
 
   ;; my personal setup, other major-mode specific setup need it.
   ;; It's dependent on init-site-lisp.el
-  (if (file-exists-p "~/.custom.el") (load-file "~/.custom.el"))
+  (if (file-exists-p "~/.emacs.d/chris_custom.el") (load-file "~/.emacs.d/chris_custom.el"))
   )
 
 ;; @see https://www.reddit.com/r/emacs/comments/4q4ixw/how_to_forbid_emacs_to_touch_configuration_files/

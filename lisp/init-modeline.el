@@ -43,11 +43,12 @@
     "] "
 
     ;;global-mode-string, org-timer-set-timer in org-mode need this
-    (propertize "%M" 'face nil)
+    ;; (propertize "%M" 'face nil)
 
-    " --"
+    "-- "
     ;; i don't want to see minor-modes; but if you want, uncomment this:
     ;; minor-mode-alist  ;; list of minor modes
+    mode-line-misc-info
     "%-" ;; fill with '-'
     ))
 

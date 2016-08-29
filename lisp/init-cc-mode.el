@@ -22,6 +22,11 @@
 
   ;; syntax-highlight aggressively
   ;; (setq font-lock-support-mode 'lazy-lock-mode)
+
+  ;make the ENTER key indent next line properly
+  (local-set-key "\C-m" 'newline-and-indent)
+  (local-set-key (kbd "RET") 'newline)
+
   (setq lazy-lock-defer-contextually t)
   (setq lazy-lock-defer-time 0)
 
@@ -66,12 +71,18 @@
 
     ))
 
+(cscope-setup)
+
 ;; donot use c-mode-common-hook or cc-mode-hook because many major-modes use this hook
 (defun c-mode-common-hook-setup ()
   (unless (is-buffer-file-temp)
     (my-common-cc-mode-setup)
     (unless (or (derived-mode-p 'java-mode) (derived-mode-p 'groovy-mode))
       (my-c-mode-setup))
+
+    (setq tab-width 4)
+    ;;(setq indent-tabs-mode t)
+    (setq electric-indent-mode nil)
 
     ;; gtags (GNU global) stuff
     (when (and (executable-find "global")
